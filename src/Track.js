@@ -1,39 +1,40 @@
-// render a track component
-// receive a track as props from Tracklist: const Track = ({ track }) => {
 const Track = ({ track, addClicked, isPlaylist, deleteClicked }) => {
-    // pass to App the id of the track that was clicked
+  const addTrack = (e) => {
+    addClicked(track.id);
+  };
 
-    const addTrack = (e) => {
-        addClicked(track.id);
-    };
+  const deleteTrack = (e) => {
+    deleteClicked(track.id);
+  };
 
-    const deleteTrack = (e) => {
-        deleteClicked(track.id);
-    };
-
-    // return the track with the proper button: "+" if the track is in search results, "-" if the track is in the playlist
-    if (isPlaylist === true) {
-        return (
-            <div className="track" key={track.id}>
-                {track.name}
-                {track.artists[0].name} {}
-                {track.album.name}
-                <button className="button" onClick={deleteTrack}>
-                    -
-                </button>
-            </div>
-        );
-    }
+  if (isPlaylist === true) {
     return (
-        <div className="track" key={track.id}>
-            {track.name} {}
-            {track.artists[0].name} {}
-            {track.album.name}
-            <button className="button" onClick={addTrack}>
-                +
-            </button>
-        </div>
+      <div className="track">
+        <img
+          className="trackImg"
+          src={track.album.images[2].url}
+          alt={track.name}
+        />
+        {track.artists[0].name} - {track.name}
+        <button className="trackButton" onClick={deleteTrack}>
+          <img alt="remove button" src="./images/remove.svg" />
+        </button>
+      </div>
     );
+  }
+  return (
+    <div className="track" key={track.id}>
+      <img
+        className="trackImg"
+        src={track.album.images[2].url}
+        alt={track.name}
+      />
+      {track.artists[0].name} - {track.name}
+      <button className="trackButton" onClick={addTrack}>
+        <img alt="add button" src="./images/add.svg" />
+      </button>
+    </div>
+  );
 };
 
 export default Track;

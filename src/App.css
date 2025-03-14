@@ -1,74 +1,153 @@
 .App {
-    margin-top: 100px;
-    padding: 0;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.header span {
+  font-size: 2.5rem;
+  font-weight: 200;
+  color: #4e4453;
+  text-transform: uppercase;
 }
 
 .searchBar {
-    text-align: center;
+  text-align: center;
+  width: 30%;
 }
 
-.button {
-    margin-left: 10px;
+.searchBar input {
+  width: 70%;
+  margin-right: 0.5rem;
+  padding: 0.3rem;
+  border: 0.07rem solid #4e4453;
+  border-radius: 0.5rem;
+}
+
+.searchBar input:focus {
+  outline-width: 0;
+}
+
+.trackButton {
+  display: flex;
+  margin-left: auto;
+  margin-right: 0.125rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #c3acd0;
+  transition: transform 0.2s;
+}
+
+.trackButton:hover {
+  transform: scale(
+    1.5
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.trackButton img {
+  width: 1.5rem;
+}
+
+.removeButton img {
+  width: 1.5rem;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .results,
 .playlist {
-    display: inline-flex;
-    width: 40%;
-    flex-direction: column;
-    text-align: center;
-    margin: 50px;
+  display: inline-flex;
+  width: 30%;
+  flex-direction: column;
+  text-align: center;
+  margin: 3.125rem;
+  padding: 1.9rem;
 }
 
-.results h2 {
-    margin-top: 0;
+.playlist input {
+  width: calc(100% - 0.6rem - 0.14rem);
+  border: 0.07rem solid #4e4453;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  margin-right: 0;
+  margin-bottom: 1rem;
+}
+
+.playlist input:focus {
+  outline-width: 0;
 }
 
 .track {
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: white;
+  padding: 0.5rem;
+  background-color: #0000004d;
+  border-radius: 0.5rem;
+  text-align: left;
 }
 
-.playlist label {
-    margin-bottom: 20px;
+.trackImg {
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.flashBtn {
+  background-color: #4e4453;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
+  color: rgb(255, 255, 255);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.flashBtn::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -80px;
+  height: 100px;
+  width: 70px;
+  background: #ffffff4d;
+  transform: rotate(20deg);
 }
 
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.saveBtn:hover::before {
+  left: 15rem;
+  transition: 0.5s;
 }
 
-.App-link {
-    color: #61dafb;
+.searchBtn:hover::before {
+  left: 11rem;
+  transition: 0.5s;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.saveBtn {
+  align-self: center;
+  width: 50%;
+  padding: 0.7rem 0.7rem;
+}
+
+.searchBtn {
+  width: fit-content;
+  padding: 0.5rem 1rem;
 }
