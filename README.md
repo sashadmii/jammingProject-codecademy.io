@@ -5,6 +5,7 @@ A Spotify music playlist app built with React, allowing users to search for song
 ## 🌐 Live Demo
 
 👉 [View it live](https://sashadmii.github.io/jammingProject-codecademy.io)
+IMPORTANT!!! You have to be logged into your Spotify account on your device to use this app.
 
 ## 🛠 Tech Stack
 
