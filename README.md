@@ -1,6 +1,6 @@
 # Jamming Project
 
-A Spotify music playlist app built with React, allowing users to search for songs, create playlists, and add or remove tracks from their playlists. This project was built as part of the Codecademy fsront-end development curriculum.
+A Spotify music playlist app built with React, allowing users to search for songs, create playlists, and add or remove tracks from their playlists. This project was built as part of the Codecademy front-end development curriculum.
 
 ## 🌐 Live Demo
 
